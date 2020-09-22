@@ -3,6 +3,12 @@ type: docker
 name: default
 
 steps:
+  - name: build
+    pull: if-not-exists
+    image: golang
+    commands:
+      - wget -q -T 180 https://dl.google.com/android/repository/android-ndk-r21b-linux-x86_64.zip
+      - unzip -q android-ndk-r21b-linux-x86_64.zip
   - name: docker
     pull: if-not-exists
     image: plugins/docker
