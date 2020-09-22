@@ -1,6 +1,4 @@
 # goenv
-[![Build Status](https://drone.aite.xyz/api/badges/xiaoqidun/goenv/status.svg)](https://drone.aite.xyz/xiaoqidun/goenv)
-
 golang environment
 
 # docker
