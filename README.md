@@ -37,9 +37,9 @@ docker run --rm -it -v "${pwd}:/go/src/app" -w /go/src/app xiaoqidun/goenv
 
 ### 编译linux程序
 ```shell
-GOOS=linux
-GOARCH=amd64
-CGO_ENABLED=0
+export GOOS=linux
+export GOARCH=amd64
+export CGO_ENABLED=0
 go build -o main_linux_amd64 main.go
 ```
 
