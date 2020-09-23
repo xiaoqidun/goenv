@@ -23,3 +23,18 @@ export GOARCH=arm64
 export CGO_ENABLED=1
 go build -o main_android_arm64 main.go
 ```
+
+# 编译项目
+
+## 将项目文件映射到容器内部
+```bat
+docker run --rm -it -v %cd%:/go/src/app -w /go/src/app xiaoqidun/goenv
+```
+
+## 在容器内执行命令进行编译
+```shell
+export GOOS=windows
+export GOARCH=amd64
+export CGO_ENABLED=0
+go build -o main_windows_amd64.exe main.go
+```
