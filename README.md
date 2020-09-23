@@ -51,3 +51,20 @@ export GOARCH=amd64
 export CGO_ENABLED=0
 go build -o main_windows_amd64.exe main.go
 ```
+
+# 编译说明
+
+## GOOS
+> 用于标识编译的目标操作系统
+
+## GOARCH
+> 用于标识编译的目标系统架构
+
+## CGO_ENABLED
+
+- 0 静态编译，禁用CGO，适用于android和darwin(apple)外的目标操作系统
+- 1 动态编译，使用CGO，适用于依靠外部工具链才能完成编译的目标操作系统
+
+## 动态编译
+
+- 动态编译必须设置CC变量，指定C编译器可执行文件路径或者在PATH变量内的可执行C编译器名称
