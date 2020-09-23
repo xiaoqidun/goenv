@@ -27,6 +27,14 @@ go build -o main_android_arm64 main.go
 # 编译项目
 
 ## 将项目文件映射到容器内部
+
+### linux - bash
+
+```shell
+docker run --rm -it -v $(pwd):/go/src/app -w /go/src/app xiaoqidun/goenv
+```
+
+### windows - cmd
 ```bat
 docker run --rm -it -v %cd%:/go/src/app -w /go/src/app xiaoqidun/goenv
 ```
