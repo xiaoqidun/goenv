@@ -4,15 +4,11 @@ type: docker
 name: goenv
 
 steps:
-  - name: build1
-    pull: if-not-exists
-    image: ghcr.io/xiaoqidun/build
-    commands:
-      - build -f build.sh -i goenv.go -o release/goenv
-  - name: build2
+  - name: build
     pull: if-not-exists
     image: xiaoqidun/goenv
     commands:
+      - chmod +x build.sh
       - ./build.sh
   - name: upload
     pull: if-not-exists
