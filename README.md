@@ -13,6 +13,20 @@ docker pull xiaoqidun/goenv:latest
 docker run -it --rm xiaoqidun/goenv
 ```
 
+# 快捷命令
+
+## 快速安装
+```shell
+go get -u github.com/xiaoqidun/goenv
+```
+
+## 手动安装
+1. 根据系统架构下载为你编译好的[二进制文件](https://aite.xyz/product/goenv/)
+2. 将下载好的二进制文件重命名为goenv并保留后缀
+3. 把goenv文件移动到系统PATH环境变量中的目录下
+4. windows外的系统需使用chmod命令赋予可执行权限
+
+
 # 编译项目
 
 ## 将项目文件映射到容器内部
