@@ -14,6 +14,7 @@ docker run -it --rm xiaoqidun/goenv
 ```
 
 # 快捷命令
+> goenv，启动一个goenv容器并将当前目录挂载到容器的工作路径
 
 ## 快速安装
 ```shell
