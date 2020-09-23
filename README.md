@@ -35,12 +35,12 @@ docker run --rm -it -v "${pwd}:/go/src/app" -w /go/src/app xiaoqidun/goenv
 
 ## 在容器内执行命令进行编译
 
-### 编译windows程序
+### 编译linux程序
 ```shell
-export GOOS=windows
-export GOARCH=amd64
-export CGO_ENABLED=0
-go build -o main_windows_amd64.exe main.go
+GOOS=linux
+GOARCH=amd64
+CGO_ENABLED=0
+go build -o main_linux_amd64 main.go
 ```
 
 ### 编译android程序
@@ -50,6 +50,14 @@ export GOOS=android
 export GOARCH=arm64
 export CGO_ENABLED=1
 go build -o main_android_arm64 main.go
+```
+
+### 编译windows程序
+```shell
+export GOOS=windows
+export GOARCH=amd64
+export CGO_ENABLED=0
+go build -o main_windows_amd64.exe main.go
 ```
 
 # 编译说明
