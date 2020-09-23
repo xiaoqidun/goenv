@@ -16,6 +16,11 @@ docker run -it --rm xiaoqidun/goenv
 # 快捷命令
 > goenv，启动一个goenv容器并将当前目录挂载到容器的工作路径
 
+## 简要说明
+- goenv命令只能在已经安装docker的系统使用
+- goenv命令依赖xiaoqidun/goenv这个容器镜像
+- goenv命令默认启动的是一个临时容器，退出即删
+
 ## 快速安装
 ```shell
 go get -u github.com/xiaoqidun/goenv
@@ -26,7 +31,6 @@ go get -u github.com/xiaoqidun/goenv
 2. 将下载好的二进制文件重命名为goenv并保留后缀
 3. 把goenv文件移动到系统PATH环境变量中的目录下
 4. windows外的系统需使用chmod命令赋予可执行权限
-
 
 # 编译项目
 
