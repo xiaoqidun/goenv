@@ -13,17 +13,6 @@ docker pull xiaoqidun/goenv:latest
 docker run -it --rm xiaoqidun/goenv
 ```
 
-# 交叉编译
-> 以编译android arm64程序为例
-
-```shell
-export CC=aarch64-linux-android21-clang
-export GOOS=android
-export GOARCH=arm64
-export CGO_ENABLED=1
-go build -o main_android_arm64 main.go
-```
-
 # 编译项目
 
 ## 将项目文件映射到容器内部
@@ -45,11 +34,22 @@ docker run --rm -it -v "${pwd}:/go/src/app" -w /go/src/app xiaoqidun/goenv
 ```
 
 ## 在容器内执行命令进行编译
+
+### 编译windows程序
 ```shell
 export GOOS=windows
 export GOARCH=amd64
 export CGO_ENABLED=0
 go build -o main_windows_amd64.exe main.go
+```
+
+### 编译android程序
+```shell
+export CC=aarch64-linux-android21-clang
+export GOOS=android
+export GOARCH=arm64
+export CGO_ENABLED=1
+go build -o main_android_arm64 main.go
 ```
 
 # 编译说明
