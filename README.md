@@ -13,13 +13,8 @@ docker pull xiaoqidun/goenv:latest
 docker run -it --rm xiaoqidun/goenv
 ```
 
-# 快捷命令
+# 快捷命令 - goenv
 > 运行一个goenv容器并将当前目录挂载到容器的工作目录
-
-## 简要说明
-- goenv命令只能在已经安装docker的系统使用
-- goenv命令依赖xiaoqidun/goenv这个容器镜像
-- goenv命令默认启动的是一个临时容器，退出即删
 
 ## 快速安装
 ```shell
