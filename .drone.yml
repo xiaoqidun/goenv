@@ -1,6 +1,39 @@
+---
 kind: pipeline
 type: docker
-name: default
+name: goenv
+
+steps:
+  - name: build
+    pull: if-not-exists
+    image: ghcr.io/xiaoqidun/build
+    commands:
+      - build -f build.sh -i goenv.go -o release/goenv
+  - name: build
+    pull: if-not-exists
+    image: xiaoqidun/goenv
+    commands:
+      - ./build.sh
+  - name: upload
+    pull: if-not-exists
+    image: plugins/s3
+    settings:
+      bucket:
+        from_secret: minio_bucket
+      access_key:
+        from_secret: minio_access_key
+      secret_key:
+        from_secret: minio_secret_key
+      source: release/*
+      strip_prefix: release/
+      target: product/goenv
+      path_style: true
+      endpoint: https://minio.aite.xyz
+
+---
+kind: pipeline
+type: docker
+name: docker
 
 steps:
   - name: build
