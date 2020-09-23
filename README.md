@@ -14,7 +14,7 @@ docker run -it --rm xiaoqidun/goenv
 ```
 
 # 快捷命令
-> goenv，启动一个goenv容器并将当前目录挂载到容器的工作路径
+> 运行一个goenv容器并将当前目录挂载到容器的工作目录
 
 ## 简要说明
 - goenv命令只能在已经安装docker的系统使用
