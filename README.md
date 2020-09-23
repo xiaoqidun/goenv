@@ -39,6 +39,11 @@ docker run --rm -it -v $(pwd):/go/src/app -w /go/src/app xiaoqidun/goenv
 docker run --rm -it -v %cd%:/go/src/app -w /go/src/app xiaoqidun/goenv
 ```
 
+### windows - powershell
+```powershell
+docker run --rm -it -v "${pwd}:/go/src/app" -w /go/src/app xiaoqidun/goenv
+```
+
 ## 在容器内执行命令进行编译
 ```shell
 export GOOS=windows
