@@ -57,6 +57,9 @@ func (d *DockerGoEnv) Run() {
 			d.CmdArgs = append(d.CmdArgs, "-v", pwd+":"+d.WorkDir, "-w", d.WorkDir)
 		}
 	}
+	if hostname, err1 := os.Hostname(); err1 == nil {
+		d.CmdArgs = append(d.CmdArgs, "-h", hostname)
+	}
 	d.CmdArgs = append(d.CmdArgs, d.Image)
 	cmd := exec.Command(d.Binary, d.CmdArgs...)
 	cmd.Stdin = os.Stdin
