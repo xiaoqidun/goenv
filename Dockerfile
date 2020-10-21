@@ -7,7 +7,7 @@ LABEL MAINTAINER="xiaoqidun@gmail.com"
 # 安装编译工具链
 RUN apt-get update \
     && apt-get install -y \
-    build-essential mingw-w64
+    build-essential mingw-w64 upx-ucl
 
 # 安装android ndk
 COPY android-ndk-r21b /usr/local/android-ndk-r21b
