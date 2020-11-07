@@ -6,7 +6,7 @@ name: goenv
 steps:
   - name: build
     pull: if-not-exists
-    image: xiaoqidun/goenv
+    image: golang:alpine
     commands:
       - chmod +x build.sh
       - ./build.sh
