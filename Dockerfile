@@ -1,5 +1,5 @@
 # 基础镜像
-FROM golang:1.16.5-buster
+FROM golang:1.17beta1-buster
 
 # 作者信息
 LABEL MAINTAINER="xiaoqidun@gmail.com"
