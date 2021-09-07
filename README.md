@@ -79,7 +79,7 @@ go build -o main_windows_amd64.exe main.go
 
 ## 快速安装
 ```shell
-go get -u github.com/xiaoqidun/goenv
+go install github.com/xiaoqidun/goenv@latest
 ```
 
 ## 手动安装
