@@ -24,12 +24,12 @@ docker run --rm -it -v $(pwd):/go/src/app -w /go/src/app hkccr.ccs.tencentyun.co
 
 ### windows - cmd
 ```bat
-docker run --rm -it -v %cd%:/go/src/app -w /go/src/app xiaoqidun/goenv
+docker run --rm -it -v %cd%:/go/src/app -w /go/src/app hkccr.ccs.tencentyun.com/xiaoqidun/goenv
 ```
 
 ### windows - powershell
 ```powershell
-docker run --rm -it -v "${pwd}:/go/src/app" -w /go/src/app xiaoqidun/goenv
+docker run --rm -it -v "${pwd}:/go/src/app" -w /go/src/app hkccr.ccs.tencentyun.com/xiaoqidun/goenv
 ```
 
 ## 在容器内执行命令进行编译
