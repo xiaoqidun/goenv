@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"runtime"
 )
 
 var (
@@ -21,14 +22,21 @@ func main() {
 		Author()
 		return
 	}
-	d := &DockerGoEnv{
+	binary := "docker"
+	if runtime.GOOS == "linux" {
+		podman, err := exec.LookPath("podman")
+		if err == nil {
+			binary = podman
+		}
+	}
+	docker := &DockerGoEnv{
 		Image:        "xiaoqidun/goenv",
-		Binary:       "docker",
+		Binary:       binary,
 		WorkDir:      "/go/src/app",
 		AutoDelete:   true,
 		MountWorkDir: true,
 	}
-	d.Run()
+	docker.Run()
 }
 
 func Author() {
