@@ -30,7 +30,7 @@ func main() {
 		}
 	}
 	docker := &DockerGoEnv{
-		Image:        "xiaoqidun/goenv",
+		Image:        "hkccr.ccs.tencentyun.com/xiaoqidun/goenv",
 		Binary:       binary,
 		WorkDir:      "/go/src/app",
 		AutoDelete:   true,

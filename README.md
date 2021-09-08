@@ -5,12 +5,12 @@ golang environment
 
 ## 拉取镜像
 ```
-docker pull xiaoqidun/goenv:latest
+docker pull hkccr.ccs.tencentyun.com/xiaoqidun/goenv:latest
 ```
 
 ## 运行镜像
 ```
-docker run -it --rm xiaoqidun/goenv
+docker run -it --rm hkccr.ccs.tencentyun.com/xiaoqidun/goenv
 ```
 
 # 编译项目
@@ -19,7 +19,7 @@ docker run -it --rm xiaoqidun/goenv
 
 ### linux - bash
 ```shell
-docker run --rm -it -v $(pwd):/go/src/app -w /go/src/app xiaoqidun/goenv
+docker run --rm -it -v $(pwd):/go/src/app -w /go/src/app hkccr.ccs.tencentyun.com/xiaoqidun/goenv
 ```
 
 ### windows - cmd

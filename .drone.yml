@@ -36,13 +36,24 @@ steps:
       - wget -q -T 180 https://dl.google.com/android/repository/android-ndk-r23-linux.zip
       - unzip -q android-ndk-r23-linux.zip
       - rm -f android-ndk-r23-linux.zip
-  - name: docker
+  - name: docker1
     pull: if-not-exists
     image: plugins/docker
     settings:
       repo: xiaoqidun/goenv
       username:
-        from_secret: docker_username
+        from_secret: docker_username1
       password:
-        from_secret: docker_password
+        from_secret: docker_password1
+      dockerfile: Dockerfile
+  - name: docker2
+    pull: if-not-exists
+    image: plugins/docker
+    settings:
+      repo: hkccr.ccs.tencentyun.com/xiaoqidun/goenv
+      registry: hkccr.ccs.tencentyun.com
+      username:
+        from_secret: docker_username2
+      password:
+        from_secret: docker_password2
       dockerfile: Dockerfile
