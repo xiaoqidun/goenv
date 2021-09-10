@@ -1,5 +1,5 @@
 # 基础镜像
-FROM golang:1.17-bullseye
+FROM golang:1.17.1-bullseye
 
 # 作者信息
 LABEL MAINTAINER="xiaoqidun@gmail.com"
@@ -8,7 +8,7 @@ LABEL MAINTAINER="xiaoqidun@gmail.com"
 RUN apt-get update \
     && apt-get install -y \
     build-essential mingw-w64 \
-    upx-ucl strace htop tmux file zip
+    iproute2 upx-ucl strace lsof htop tmux file zip
 
 # 安装android ndk
 COPY android-ndk-r23 /usr/local/android-ndk-r23
