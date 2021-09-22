@@ -11,7 +11,7 @@ steps:
       - chmod +x build.sh
       - ./build.sh
   - name: upload
-    image: xiaoqidun/gocos
+    image: hkccr.ccs.tencentyun.com/xiaoqidun/gocos
     settings:
       secret_id:
         from_secret: cos_secret_id
@@ -40,7 +40,7 @@ steps:
     pull: if-not-exists
     image: plugins/docker
     settings:
-      repo: xiaoqidun/goenv
+      repo: hkccr.ccs.tencentyun.com/xiaoqidun/goenv
       username:
         from_secret: docker_username1
       password:
