@@ -40,7 +40,7 @@ steps:
     pull: if-not-exists
     image: plugins/docker
     settings:
-      repo: hkccr.ccs.tencentyun.com/xiaoqidun/goenv
+      repo: xiaoqidun/goenv
       username:
         from_secret: docker_username1
       password:
