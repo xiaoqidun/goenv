@@ -1,5 +1,5 @@
 # 基础镜像
-FROM golang:1.18beta2-bullseye
+FROM golang:1.18rc1-bullseye
 
 # 作者信息
 LABEL MAINTAINER="xiaoqidun@gmail.com"
