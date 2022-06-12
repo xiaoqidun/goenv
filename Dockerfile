@@ -1,5 +1,5 @@
 # 基础镜像
-FROM golang:1.18.3-bullseye
+FROM golang:1.19beta1-bullseye
 
 # 作者信息
 LABEL MAINTAINER="xiaoqidun@gmail.com"
@@ -11,9 +11,9 @@ RUN apt-get update \
     iproute2 upx-ucl strace lsof htop tmux file zip
 
 # 安装android ndk
-COPY android-ndk-r23b /usr/local/android-ndk-r23b
+COPY android-ndk-r23c /usr/local/android-ndk-r23c
 
 # 环境变量
-ENV PATH=$PATH:/usr/local/android-ndk-r23b/toolchains/llvm/prebuilt/linux-x86_64/bin
+ENV PATH=$PATH:/usr/local/android-ndk-r23c/toolchains/llvm/prebuilt/linux-x86_64/bin
 ENV GO111MODULE=on
 ENV GOPROXY=https://goproxy.aite.xyz,direct
