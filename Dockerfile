@@ -8,7 +8,7 @@ LABEL MAINTAINER="xiaoqidun@gmail.com"
 RUN apt-get update \
     && apt-get install -y \
     build-essential mingw-w64 \
-    iproute2 upx-ucl strace lsof htop tmux file zip git
+    iproute2 upx-ucl file zip
 
 # 安装android ndk
 COPY android-ndk-r25b /usr/local/android-ndk-r25b
