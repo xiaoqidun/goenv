@@ -11,9 +11,9 @@ RUN apt-get update \
     iproute2 upx-ucl file zip
 
 # 安装android ndk
-COPY android-ndk-r25b /usr/local/android-ndk-r25b
+COPY android-ndk-r25c /usr/local/android-ndk-r25c
 
 # 环境变量
-ENV PATH=$PATH:/usr/local/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin
+ENV PATH=$PATH:/usr/local/android-ndk-r25c/toolchains/llvm/prebuilt/linux-x86_64/bin
 ENV GO111MODULE=on
 ENV GOPROXY=https://goproxy.aite.xyz,direct
