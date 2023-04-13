@@ -8,7 +8,8 @@ LABEL MAINTAINER="xiaoqidun@gmail.com"
 RUN apt-get update \
     && apt-get install -y \
     build-essential mingw-w64 \
-    iproute2 upx-ucl file zip
+    iproute2 upx-ucl file zip \
+    && rm -rf /var/lib/apt/lists/*
 
 # 安装android ndk
 COPY android-ndk-r25c /usr/local/android-ndk-r25c
