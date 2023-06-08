@@ -33,7 +33,7 @@ steps:
     pull: if-not-exists
     image: alpine
     commands:
-      - wget -q -T 180 https://dl.google.com/android/repository/android-ndk-r25c-linux.zip
+      - wget -4 -q -T 180 https://dl.google.com/android/repository/android-ndk-r25c-linux.zip
       - unzip -q android-ndk-r25c-linux.zip
       - rm -f android-ndk-r25c-linux.zip
   - name: docker1
