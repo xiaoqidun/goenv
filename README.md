@@ -73,17 +73,3 @@ go build -o main_windows_amd64.exe main.go
 
 ## 动态编译
 - 动态编译必须设置CC变量，指定C编译器可执行文件路径或者在PATH变量内的可执行C编译器名称
-
-# 快捷命令 - goenv
-> 运行一个goenv容器并将当前目录挂载到容器的工作目录
-
-## 快速安装
-```shell
-go install github.com/xiaoqidun/goenv@latest
-```
-
-## 手动安装
-1. 根据系统架构下载为你编译好的[二进制文件](https://aite.xyz/product/goenv/)
-2. 将下载好的二进制文件重命名为goenv并保留后缀
-3. 把goenv文件移动到系统PATH环境变量中的目录下
-4. windows外的系统需使用chmod命令赋予可执行权限

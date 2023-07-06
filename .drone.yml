@@ -1,32 +1,7 @@
 ---
 kind: pipeline
 type: docker
-name: goenv
-
-steps:
-  - name: build
-    pull: if-not-exists
-    image: hkccr.ccs.tencentyun.com/xiaoqidun/goenv
-    commands:
-      - chmod +x build.sh
-      - ./build.sh
-  - name: upload
-    image: hkccr.ccs.tencentyun.com/xiaoqidun/gocos
-    settings:
-      secret_id:
-        from_secret: cos_secret_id
-      secret_key:
-        from_secret: cos_secret_key
-      bucket_url:
-        from_secret: cos_bucket_url
-      source: release/
-      target: product/goenv
-      strip_prefix: release/
-
----
-kind: pipeline
-type: docker
-name: docker
+name: default
 
 steps:
   - name: build
@@ -57,4 +32,4 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
-      dockerfile: Dockerfile
+      dockerfile: DockerfileCN
