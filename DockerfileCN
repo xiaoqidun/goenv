@@ -16,4 +16,4 @@ COPY android-ndk-r25c /usr/local/android-ndk-r25c
 # 环境变量
 ENV PATH=$PATH:/usr/local/android-ndk-r25c/toolchains/llvm/prebuilt/linux-x86_64/bin
 ENV GO111MODULE=on
-ENV GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
+ENV GOPROXY=https://goproxy.cn,direct
