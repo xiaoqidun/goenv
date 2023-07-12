@@ -9,7 +9,8 @@ steps:
     pull: if-not-exists
     image: debian
     commands:
-      - wget -4 -q -T 180 https://dl.google.com/android/repository/android-ndk-r25c-linux.zip
+      - apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/*
+      - wget -q -T 180 -4 https://dl.google.com/android/repository/android-ndk-r25c-linux.zip
       - unzip -q android-ndk-r25c-linux.zip
       - rm -f android-ndk-r25c-linux.zip
   - name: docker-cn
