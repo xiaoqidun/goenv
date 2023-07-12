@@ -3,7 +3,7 @@ kind: pipeline
 type: docker
 name: default
 node:
-  region: cn
+  region: hk
 steps:
   - name: build
     pull: if-not-exists
