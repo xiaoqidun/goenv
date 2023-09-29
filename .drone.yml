@@ -1,19 +1,20 @@
 ---
 kind: pipeline
 type: docker
-name: default
+name: docker-cn
 node:
-  region: hk
+  region: cn
 steps:
   - name: build
     pull: if-not-exists
     image: debian
     commands:
+      - sed -i "s|deb.debian.org|mirrors.ustc.edu.cn|g" /etc/apt/sources.list.d/debian.sources
       - apt-get update && apt-get install -y wget unzip && rm -rf /var/lib/apt/lists/*
-      - wget -q -T 180 -4 https://dl.google.com/android/repository/android-ndk-r25c-linux.zip
-      - unzip -q android-ndk-r25c-linux.zip
-      - rm -f android-ndk-r25c-linux.zip
-  - name: docker-cn
+      - wget -q -T 180 -4 https://dl.google.com/android/repository/android-ndk-r26-linux.zip
+      - unzip -q android-ndk-r26-linux.zip
+      - rm -f android-ndk-r26-linux.zip
+  - name: docker
     pull: if-not-exists
     image: plugins/docker
     settings:
@@ -24,7 +25,22 @@ steps:
       password:
         from_secret: docker_password
       dockerfile: DockerfileCN
-  - name: docker-hk
+---
+kind: pipeline
+type: docker
+name: docker-hk
+node:
+  region: cn
+steps:
+  - name: build
+    pull: if-not-exists
+    image: debian
+    commands:
+      - apt-get update && apt-get install -y wget unzip && rm -rf /var/lib/apt/lists/*
+      - wget -q -T 180 -4 https://dl.google.com/android/repository/android-ndk-r26-linux.zip
+      - unzip -q android-ndk-r26-linux.zip
+      - rm -f android-ndk-r26-linux.zip
+  - name: docker
     pull: if-not-exists
     image: plugins/docker
     settings:
