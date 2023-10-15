@@ -1,7 +1,7 @@
 ---
 kind: pipeline
 type: docker
-name: docker-cn
+name: default
 node:
   region: cn
 steps:
@@ -14,7 +14,7 @@ steps:
       - wget -q -T 180 -4 https://dl.google.com/android/repository/android-ndk-r26-linux.zip
       - unzip -q android-ndk-r26-linux.zip
       - rm -f android-ndk-r26-linux.zip
-  - name: docker
+  - name: docker-cn
     pull: if-not-exists
     image: plugins/docker
     settings:
@@ -25,22 +25,7 @@ steps:
       password:
         from_secret: docker_password
       dockerfile: DockerfileCN
----
-kind: pipeline
-type: docker
-name: docker-hk
-node:
-  region: cn
-steps:
-  - name: build
-    pull: if-not-exists
-    image: debian
-    commands:
-      - apt-get update && apt-get install -y wget unzip && rm -rf /var/lib/apt/lists/*
-      - wget -q -T 180 -4 https://dl.google.com/android/repository/android-ndk-r26-linux.zip
-      - unzip -q android-ndk-r26-linux.zip
-      - rm -f android-ndk-r26-linux.zip
-  - name: docker
+  - name: docker-hk
     pull: if-not-exists
     image: plugins/docker
     settings:
