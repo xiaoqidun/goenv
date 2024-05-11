@@ -1,5 +1,5 @@
 # 基础镜像
-FROM golang:1.22.2-bookworm
+FROM golang:1.22.3-bookworm
 
 # 作者信息
 LABEL MAINTAINER="xiaoqidun@gmail.com"
@@ -14,9 +14,9 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # 安装android ndk
-COPY android-ndk-r26c /usr/local/android-ndk-r26c
+COPY android-ndk-r26d /usr/local/android-ndk-r26d
 
 # 环境变量
-ENV PATH=$PATH:/usr/local/android-ndk-r26c/toolchains/llvm/prebuilt/linux-x86_64/bin
+ENV PATH=$PATH:/usr/local/android-ndk-r26d/toolchains/llvm/prebuilt/linux-x86_64/bin
 ENV GO111MODULE=on
 ENV GOPROXY=https://goproxy.cn,direct
