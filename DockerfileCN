@@ -1,8 +1,8 @@
 # 基础镜像
-FROM golang:1.22.4-bookworm
+FROM golang:1.23rc1-bookworm
 
 # 作者信息
-LABEL MAINTAINER="xiaoqidun@gmail.com"
+LABEL authors="xiaoqidun"
 
 # 使用中国软件源
 RUN sed -i "s|deb.debian.org|mirrors.ustc.edu.cn|g" /etc/apt/sources.list.d/debian.sources
