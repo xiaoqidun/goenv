@@ -7,7 +7,7 @@ LABEL authors="xiaoqidun"
 # 安装编译工具链
 RUN apt-get update \
     && apt-get install -y \
-    build-essential mingw-w64 upx-ucl \
+    build-essential mingw-w64 \
     && rm -rf /var/lib/apt/lists/*
 
 # 安装android ndk
