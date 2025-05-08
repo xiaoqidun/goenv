@@ -1,5 +1,5 @@
 # 基础镜像
-FROM golang:1.24.2-bookworm
+FROM golang:1.24.3-bookworm
 
 # 作者信息
 LABEL authors="xiaoqidun"
