@@ -6,7 +6,7 @@ node:
 steps:
   - name: build
     pull: if-not-exists
-    image: debian
+    image: debian:trixie
     commands:
       - sed -i "s|deb.debian.org|mirrors.ustc.edu.cn|g" /etc/apt/sources.list.d/debian.sources
       - apt-get update && apt-get install -y wget unzip && rm -rf /var/lib/apt/lists/*
