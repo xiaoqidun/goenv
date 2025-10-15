@@ -1,5 +1,5 @@
 # 基础镜像
-FROM golang:1.25.2-trixie
+FROM golang:1.25.3-trixie
 
 # 作者信息
 LABEL authors="xiaoqidun"
