@@ -1,9 +1,7 @@
-name: default
 on: [push, workflow_dispatch]
 jobs:
   build:
     runs-on: cn
-    container: debian:trixie
     strategy:
       matrix:
         include:
@@ -32,7 +30,6 @@ jobs:
           password: ${{ secrets.docker_password }}
       - uses: docker/build-push-action@v6
         with:
-          context: .
           file: ${{ matrix.dockerfile }}
           push: true
           tags: ${{ matrix.image }}
