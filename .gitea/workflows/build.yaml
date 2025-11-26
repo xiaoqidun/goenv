@@ -37,6 +37,6 @@ jobs:
         with:
           context: .
           file: ${{ matrix.dockerfile }}
-          push: true
           tags: ${{ matrix.image }}
+          push: true
           provenance: false
