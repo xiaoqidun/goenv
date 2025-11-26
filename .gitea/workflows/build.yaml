@@ -36,7 +36,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: ${{ matrix.dockerfile }}
-          tags: ${{ matrix.image }}
           push: true
           provenance: false
+          file: ${{ matrix.dockerfile }}
+          tags: ${{ matrix.image }}
