@@ -12,7 +12,7 @@ jobs:
             registry: hkccr.ccs.tencentyun.com
             image: hkccr.ccs.tencentyun.com/xiaoqidun/goenv:latest
     steps:
-      - name: clone
+      - name: checkout
         uses: actions/checkout@v6
       - name: download ndk
         run: |
