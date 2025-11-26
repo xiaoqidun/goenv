@@ -12,24 +12,30 @@ jobs:
             registry: hkccr.ccs.tencentyun.com
             image: hkccr.ccs.tencentyun.com/xiaoqidun/goenv:latest
     steps:
-      - uses: actions/checkout@v6
-      - run: |
+      - name: clone
+        uses: actions/checkout@v6
+      - name: download
+        run: |
           apt-get update && apt-get install -y wget unzip && rm -rf /var/lib/apt/lists/*
           wget -q -T 180 -4 https://dl.google.com/android/repository/android-ndk-r29-linux.zip
           unzip -q android-ndk-r29-linux.zip && rm -f android-ndk-r29-linux.zip
-      - uses: docker/setup-buildx-action@v3
+      - name: setup
+        uses: docker/setup-buildx-action@v3
         with:
           driver-opts: |
             "env.http_proxy=${{ env.HTTP_PROXY }}"
             "env.https_proxy=${{ env.HTTPS_PROXY }}"
             "env.no_proxy=${{ env.NO_PROXY }}"
-      - uses: docker/login-action@v3
+      - name: login
+        uses: docker/login-action@v3
         with:
           registry: ${{ matrix.registry }}
           username: ${{ secrets.docker_username }}
           password: ${{ secrets.docker_password }}
-      - uses: docker/build-push-action@v6
+      - name: build
+        uses: docker/build-push-action@v6
         with:
+          context: .
           file: ${{ matrix.dockerfile }}
           push: true
           tags: ${{ matrix.image }}
