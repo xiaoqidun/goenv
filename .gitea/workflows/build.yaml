@@ -17,7 +17,9 @@ jobs:
       - name: download ndk
         run: |
           apt-get update && apt-get install -y wget unzip && rm -rf /var/lib/apt/lists/*
+          wget -q -T 180 -4 https://github.com/thongtech/go-legacy-win7/releases/download/v1.26.0-2/go-legacy-win7-1.26.0-2.linux_amd64.tar.gz
           wget -q -T 180 -4 https://dl.google.com/android/repository/android-ndk-r29-linux.zip
+          tar -zxf go-legacy-win7-1.26.0-2.linux_amd64.tar.gz && rm -f go-legacy-win7-1.26.0-2.linux_amd64.tar.gz
           unzip -q android-ndk-r29-linux.zip && rm -f android-ndk-r29-linux.zip
       - name: docker setup
         uses: docker/setup-buildx-action@v3
