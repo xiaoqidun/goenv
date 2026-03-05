@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v6
-      - name: download ndk
+      - name: download
         run: |
           apt-get update && apt-get install -y wget unzip && rm -rf /var/lib/apt/lists/*
           wget -q -T 180 -4 https://github.com/thongtech/go-legacy-win7/releases/download/v1.26.0-2/go-legacy-win7-1.26.0-2.linux_amd64.tar.gz
