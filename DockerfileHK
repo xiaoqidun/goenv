@@ -11,10 +11,10 @@ RUN apt-get update \
     autoconf libtool pkgconf git \
     && rm -rf /var/lib/apt/lists/*
 
-# 安装go-legacy-win7
+# 安装 Go
 COPY go-legacy-win7 /usr/local/go-legacy-win7
 
-# 安装android ndk
+# 安装 NDK
 COPY android-ndk-r29 /usr/local/android-ndk-r29
 
 # 环境变量
