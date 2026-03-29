@@ -10,7 +10,7 @@ docker pull ccr.ccs.tencentyun.com/xiaoqidun/goenv:latest
 
 ## 运行镜像
 ```
-docker run -it --rm ccr.ccs.tencentyun.com/xiaoqidun/goenv
+docker run -it --rm ccr.ccs.tencentyun.com/xiaoqidun/goenv:latest
 ```
 
 # 编译项目
@@ -19,17 +19,17 @@ docker run -it --rm ccr.ccs.tencentyun.com/xiaoqidun/goenv
 
 ### linux - bash
 ```shell
-docker run --rm -it -v $(pwd):/usr/src/app -w /usr/src/app ccr.ccs.tencentyun.com/xiaoqidun/goenv
+docker run --rm -it -v $(pwd):/usr/src/app -w /usr/src/app ccr.ccs.tencentyun.com/xiaoqidun/goenv:latest
 ```
 
 ### windows - cmd
 ```bat
-docker run --rm -it -v %cd%:/usr/src/app -w /usr/src/app ccr.ccs.tencentyun.com/xiaoqidun/goenv
+docker run --rm -it -v %cd%:/usr/src/app -w /usr/src/app ccr.ccs.tencentyun.com/xiaoqidun/goenv:latest
 ```
 
 ### windows - powershell
 ```powershell
-docker run --rm -it -v "${pwd}:/usr/src/app" -w /usr/src/app ccr.ccs.tencentyun.com/xiaoqidun/goenv
+docker run --rm -it -v "${pwd}:/usr/src/app" -w /usr/src/app ccr.ccs.tencentyun.com/xiaoqidun/goenv:latest
 ```
 
 ## 在容器内执行命令进行编译
