@@ -20,6 +20,8 @@ jobs:
           wget -T 180 -4 https://github.com/thongtech/go-legacy-win7/releases/download/v1.27.0-2/go-legacy-win7-1.27.0-2.linux_amd64.tar.gz
           wget -T 180 -4 https://dl.google.com/android/repository/android-ndk-r29-linux.zip
           tar -zxf go-legacy-win7-1.27.0-2.linux_amd64.tar.gz && rm -f go-legacy-win7-1.27.0-2.linux_amd64.tar.gz
+          grep -q '^[[:space:]]*"syscall"$' go-legacy-win7/src/os/root_noopenat.go || sed -i 's#"sync/atomic"#"sync/atomic"\n\t"syscall"#' go-legacy-win7/src/os/root_noopenat.go
+          GOOS=js GOARCH=wasm CGO_ENABLED=0 ./go-legacy-win7/bin/go build -a os
           unzip -q android-ndk-r29-linux.zip && rm -f android-ndk-r29-linux.zip
       - name: docker setup
         uses: docker/setup-buildx-action@v3
